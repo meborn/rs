@@ -1,0 +1,24 @@
+%section.subheader#product-section-1.light-bg
+	.container
+		.row
+			.col-xs-12.text-center
+				%h1.dark-text Products
+				= image_tag 'rs-logo.png', {alt:'Ryno Stand Electrician Tools', class:'subheader-text-img'}
+
+%section#packages-section.light-bg
+	.container
+		.row
+			.col-xs-12
+				%h1.dark-text Packages
+		-@products.each_slice(3) do |x, y, z|
+			.row.product-row
+				-[x,y,z].each do |p|
+					-if p
+						.col-xs-12.col-sm-6.col-md-4.text-center
+							.thumbnail
+								.caption
+									%h3.dark-text
+										= p.title
+									%p.lead.dark-text
+										= p.price
+									= link_to 'View', product_path(p), class: 'dark-clear-btn'

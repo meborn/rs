@@ -1,0 +1,47 @@
+%section.light-bg#index-section-1
+	.container
+		.row
+			.col-xs-12.text-center
+				=image_tag 'logo.png', alt: 'Ryno Stand Electrician Tools', class: 'logo-img'
+				=image_tag 'rs-logo.png', alt: 'Ryno Stand Electrician Tools', class: 'logo-text-img'
+				#index-section-1-text
+					%h1= 'Electrician, Plumber, and Handyman Tools'
+%section#index-section-2
+	.container
+		.row
+			.col-xs-12.col-md-8.col-lg-7.vcenter
+				.embed-responsive.embed-responsive-16by9
+					%iframe{src: 'https://www.youtube.com/embed/ouwL6WbTtcY', allowfullscreen: true}
+			.col-xs-12.col-md-4.col-lg-5.vcenter
+				=link_to 'Learn More', static_about_path, class: 'light-clear-btn'
+%section#index-section-3.light-bg
+	.container
+		.row
+			-@imagebar.each do |image|
+				.col-xs-12.col-md-4
+					=image_tag image[:ipath], alt: "Ryno Stand #{image[:title]}", class: 'img-responsive'
+					%h3.dark-text.text-center= image[:title]
+%section#index-section-4
+	.container
+		.row
+			.col-xs-12
+				%h1.light-text
+					%span.glyphicon.glyphicon-ok.orange-text
+					="Electrician Approved"
+				.carousel.slide#testimonial-carousel{data:{ride: 'carousel'}}
+					.carousel-inner{role: 'listbox'}
+						- @testimonials.each_with_index do |test, index|
+							-if index == 0
+								.item.active
+									%p.content.light-text= test.content
+									%p.details.light-text.text-right= "#{test.name} - #{test.company} - #{test.city}, #{test.state}"
+							-else
+								.item
+									%p.content.light-text= test.content
+									%p.details.light-text.text-right= "#{test.name} - #{test.company} - #{test.city}, #{test.state}"
+%section#index-section-5.light-bg
+	.container
+		.row
+			.col-xs-12
+				%h1.dark-text.text-center= 'Buy Online Today!'
+				=link_to 'Shop Now', root_url, class: 'dark-clear-btn'

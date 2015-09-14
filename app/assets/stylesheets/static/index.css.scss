@@ -1,0 +1,52 @@
+@import '../functions';
+
+section#index-section-1 {
+	padding:20px 0px;
+}
+
+#index-section-1-text {
+	margin:0px auto;
+	width: 100%;
+	max-width: 600px;
+	h1 {
+		margin:0px auto;
+		font-size: em(16);
+		text-align: right;
+	}
+	
+}
+
+section#index-section-2 {
+	padding:60px 0px;
+	background: url(image_path('index/bg-index-section-2.jpg')) #000 no-repeat top center fixed;
+	background-size: cover;
+	a {
+		margin-top: 100px;
+		text-align: center;
+	}
+	
+}
+
+section#index-section-3 {
+	padding:60px 0px;
+	img {
+		display: block;
+		margin:0px auto;
+		width:500px;
+	}
+}
+
+section#index-section-4 {
+	padding:60px 0px;
+	background: url(image_path('index/bg-index-section-4.jpg')) #000 no-repeat top center fixed;
+	background-size: cover;
+	.content {
+		font-size: em(22);
+		padding-top: 50px;
+		min-height: 200px;
+	}
+}
+
+section#index-section-5 {
+	padding:60px 0px;
+}

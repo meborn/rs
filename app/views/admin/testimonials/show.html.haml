@@ -1,0 +1,23 @@
+.container
+	.row.rs-row
+		.col-xs-12
+			%h1 Testimonial
+			.panel.panel-default
+				.panel-heading.text-right
+					=link_to edit_admin_testimonial_path(@testimonial) do
+						%span.glyphicon.glyphicon-pencil
+					=link_to admin_testimonial_path(@testimonial), method: :delete do
+						%span.glyphicon.glyphicon-trash
+				%ul.list-group
+					%li.list-group-item
+						%strong Company:
+						= @testimonial.company
+					%li.list-group-item
+						%strong Name:
+						= @testimonial.name
+					%li.list-group-item
+						%strong City, State:
+						= "#{@testimonial.city}, #{@testimonial.state}"
+					%li.list-group-item
+						%strong Content:
+						= @testimonial.content

@@ -1,0 +1,14 @@
+.container
+	.row.rs-row
+		.col-xs-12
+			.panel.panel-default.admin-product-show-panel
+				.panel-heading.text-right
+					=link_to edit_admin_product_path(@product) do
+						%span.glyphicon.glyphicon-pencil
+					=link_to admin_product_path(@product), method: :delete do
+						%span.glyphicon.glyphicon-trash
+				.panel-body
+					= image_tag @product.product_images[0].image, class: 'pull-left'
+					%h1 
+						=@product.title
+				

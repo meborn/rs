@@ -1,0 +1,32 @@
+.container
+	.row.rs-row
+		.col-xs-12
+			%h1 Testimonials
+			.panel.panel-default
+				.panel-heading.text-right
+					=link_to "+New Testimonial", new_admin_testimonial_path
+				.panel-body
+					%table.table
+						%thead
+							%tr
+								%th Company
+								%th Name
+								%th City, State
+								%th View
+								%th Edit
+								%th Delete
+						%tbody
+							-@testimonials.each do |t|
+								%tr
+									%td= t.company
+									%td= t.name
+									%td= "#{t.city}, #{t.state}"
+									%td
+										=link_to admin_testimonial_path(t) do
+											%span.glyphicon.glyphicon-eye-open
+									%td
+										=link_to edit_admin_testimonial_path(t) do
+											%span.glyphicon.glyphicon-pencil
+									%td
+										=link_to admin_testimonial_path(t), method: :delete do
+											%span.glyphicon.glyphicon-trash

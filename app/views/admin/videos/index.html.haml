@@ -1,0 +1,19 @@
+.container
+	.row.rs-row
+		.col-xs-12
+			%h1 Videos
+			.panel.panel-default
+				.panel-heading.text-right
+					=link_to "+ New Video", new_admin_video_path
+				.panel-body
+					-@videos.each_slice(3) do |x, y, z|
+						.row.video-row
+							-[x,y,z].each do |video|
+								-if video
+									.col-xs-12.col-md-4.video-col
+										.embed-responsive.embed-responsive-16by9
+											%iframe{:src=>"#{video.url}", 'allowfullscreen'=>'true'}
+										.video-controls
+											=link_to admin_video_path(video), method: :delete, class: 'btn btn-danger pull-right' do
+												%span{class: 'glyphicon glyphicon-trash', 'aria-hidden'=>'true'}
+												Delete

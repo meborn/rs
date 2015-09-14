@@ -1,0 +1,59 @@
+%section.subheader.light-bg#about-section-1
+	.container
+		.row
+			.col-xs-12.text-center
+				%h1.dark-text About
+				=image_tag 'rs-logo.png', alt: 'Ryno Stand Electrician Tools', class: 'subheader-text-img'
+
+%section.light-bg#about-section-2
+	.container
+		.row
+			.col-xs-12.col-sm-6
+				.row
+					.col-xs-6.text-center
+						= image_tag 'about/rs_about_1.png',{alt: 'Ryno Wire Caddy'}
+					.col-xs-6.text-center
+						= image_tag 'about/rs_about_2.png',{alt: 'Ryno Wire Caddy'}
+			.col-xs-12.col-sm-6
+				.row
+					.col-xs-6.text-center
+						= image_tag 'about/rs_about_3.png',{alt: 'Ryno Vise'}
+					.col-xs-6.text-center
+						= image_tag 'about/rs_about_4.png',{alt: 'Ryno Vise'}
+%section.light-bg#about-section-3
+	.container
+		.row
+			.col-xs-12
+				%h1.dark-text What is Ryno Stand?
+				%p.dark-text.lead
+					RynoStand is a safe, fast and cost effective way of getting the job done in the 21st century. By utilizing the standard 2.5" receiver hitch of any vehicle, RynoStand provides a stable working environment for anyone who uses a vise or wire/cable rack. Then when the job is done, Rynostand disassembles for easy storage into places that the competition can only dream of.
+%section#about-section-4
+	.container
+		.row
+			.col-xs-12
+				%h1.light-text
+					%span.glyphicon.glyphicon-ok.orange-text
+					="Electrician Approved"
+				.carousel.slide#testimonial-carousel{data:{ride: 'carousel'}}
+					.carousel-inner{role: 'listbox'}
+						- @testimonials.each_with_index do |test, index|
+							-if index == 0
+								.item.active
+									%p.content.light-text= test.content
+									%p.details.light-text.text-right= "#{test.name} - #{test.company} - #{test.city}, #{test.state}"
+							-else
+								.item
+									%p.content.light-text= test.content
+									%p.details.light-text.text-right= "#{test.name} - #{test.company} - #{test.city}, #{test.state}"
+%section.light-bg#about-section-5
+	.container
+		.row
+			.col-xs-12
+				%h1.dark-text Videos
+		-@videos.each_slice(3) do |x, y, z|
+			.row
+				-[x,y,z].each do |video|
+					-if video
+						.col-xs-12.col-md-4
+							.embed-responsive.embed-responsive-16by9
+								%iframe{:src=>"#{video.url}", 'allowfullscreen'=>'true'}

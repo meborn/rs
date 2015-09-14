@@ -1,0 +1,117 @@
+/*Background Colors*/
+$bg-light: #ededed;
+
+/*Text Colors*/
+$txt-light: #ededed;
+$txt-ornge: #f69420;
+
+/*Background Classes - Start*/
+/*######################################################################*/
+.light-bg {
+	background-color: $bg-light;
+}
+/*######################################################################*/
+/*Background Classes - End*/
+
+/*Text Color Classes - Start*/
+/*######################################################################*/
+.light-text {
+	color: $txt-light;
+}
+.orange-text {
+	color: $txt-ornge;
+}
+/*######################################################################*/
+/*Text Color Classes - End*/
+
+/*Buttons Classes - Start*/
+/*######################################################################*/
+
+.light-clear-btn {
+	background-color: transparent;
+	border:2px solid #ededed;
+	color:#ededed;
+	display: block;
+	width:100%;
+	max-width: 300px;
+	margin: 0px auto;
+	margin-top: 30px;
+	text-align: center;
+	padding: 10px 0px;
+	font-size: 22px;
+}
+
+.dark-clear-btn {
+	background-color: transparent;
+	border:2px solid #000;
+	color:#000;
+	display: block;
+	width:100%;
+	max-width: 300px;
+	margin: 0px auto;
+	margin-top: 30px;
+	text-align: center;
+	padding: 10px 0px;
+	font-size: 22px;
+}
+
+.dark-clear-btn:hover, .light-clear-btn:hover {
+	text-decoration: none;
+	color:#f69420;
+	border:2px solid #f69420;
+}
+
+/*######################################################################*/
+/*Buttons Classes - End*/
+
+/*Logo Classes - Start*/
+/*######################################################################*/
+.logo-text-img {
+	width:100%;
+	max-width: 600px;
+}
+
+.logo-img {
+	margin:0px auto;
+	display: block;
+	width:80px;
+	margin-bottom: 10px;
+}
+
+/*######################################################################*/
+/*Logo Classes - End*/
+
+/*Subheader Classes - Start*/
+/*######################################################################*/
+section.subheader {
+	padding:20px 0px;
+	border-bottom: 2px solid #000;
+}
+
+.subheader h1 {
+	margin-top: 0px;
+}
+
+.subheader-text-img {
+	width:100%;
+	max-width: 200px;
+	vertical-align: middle;
+}
+/*Subheader Classes - Start*/
+/*######################################################################*/
+
+/*Helper Classes - Start*/
+/*######################################################################*/
+
+.vcenter {
+	float: left;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.rs-row {
+	padding:60px 0px;
+}
+
+/*######################################################################*/
+/*Helper Classes - End*/
