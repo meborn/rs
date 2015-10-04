@@ -8,7 +8,7 @@ class Admin::ProductImagesController < ApplicationController
 		@product = Product.find(params[:product_id])
 		@product_image.product = @product
 		if @product_image.save
-			redirect_to admin_products_path
+			redirect_to admin_product_path(@product)
 		else
 			render :new
 		end

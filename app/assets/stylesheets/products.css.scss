@@ -1,3 +1,56 @@
 // Place all the styles related to the Products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#product-show-section{
+  padding:40px 0px;
+}
+@import 'base';
+
+#product-show-section h2 {
+  margin-top: 0px;
+  margin-bottom: 30px;
+}
+
+#product-main-img {
+  width:100%;
+  border:1px solid #000;
+}
+
+.thumb, .add-image-thumb {
+  width:100px;
+  margin-top: 10px;
+  margin-right: 10px;
+  border:1px solid #000;
+  float: left;
+  cursor:pointer;
+}
+.add-image-thumb {
+  background-color: #ddd;
+  height:67px;
+  font-size: 28px;
+  text-align: center;
+  color: $txt-ornge;
+  display: table;
+  span {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+#terms_section_1 {
+  padding:40px 0px;
+}
+
+#add_section_1 {
+  padding:40px 0px;
+}
+
+#add_section_2 {
+  padding:40px 0px;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+
+#add_section_2 img {
+  width:100%;
+}

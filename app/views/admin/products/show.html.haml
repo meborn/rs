@@ -1,14 +1,45 @@
-.container
-	.row.rs-row
-		.col-xs-12
-			.panel.panel-default.admin-product-show-panel
-				.panel-heading.text-right
-					=link_to edit_admin_product_path(@product) do
-						%span.glyphicon.glyphicon-pencil
-					=link_to admin_product_path(@product), method: :delete do
-						%span.glyphicon.glyphicon-trash
-				.panel-body
-					= image_tag @product.product_images[0].image, class: 'pull-left'
-					%h1 
-						=@product.title
-				
+%section.subheader.light-bg#product-section-1
+	.container
+		.row
+			.col-xs-12.text-center
+				%h1.dark-text
+					=@product.title
+				=image_tag 'rs-logo.png', alt: 'Ryno Stand Electrician Tools', class: 'subheader-text-img'
+%section#product-show-section.light-bg
+	.container
+		- if admin_signed_in?
+			.row
+				.col-xs-12
+					.pull-right
+						=link_to edit_admin_product_path(@product) do
+							%span.glyphicon.glyphicon-pencil
+						=link_to admin_product_path(@product), method: :delete do
+							%span.glyphicon.glyphicon-trash
+		.row
+			.col-xs-12.col-md-7
+				-unless @product.product_images.empty?
+					= image_tag @product.product_images[0].image, id: 'product-main-img', class: 'img-responsive'
+					-@product.product_images.each do |i|
+						= image_tag i.image, alt:'Ryno Vise Electrician Tools', class: 'thumb'
+					.add-image-thumb{'data-toggle':'modal', 'data-target':'#add-product-image-modal'}
+						%span.glyphicon.glyphicon-plus
+			.col-xs-12.col-md-5
+				%h2.dark-text= @product.title
+				%h4.dark-text Description
+				%p.dark-text= @product.description
+				%p.lead.dark-text= "$#{@product.price}"
+.modal.fade#add-product-image-modal{tabindex:'-1', role:'dialog', 'aria-labelledby':'add-product-image-label'}
+	.modal-dialog{role:'document'}
+		.modal-content.light-bg
+			.modal-header
+				%button.close{type:'button', 'data-dismiss':'modal', 'aria-label':'Close'}
+					%span{'aria-hidden':'true'} &times;
+				%h4.modal-title#add-product-image-label
+					Upload New Image
+			.modal-body
+				= form_for [:admin, @product, @product_image] do |f|
+					.form-group
+						= f.label :image, 'New Image'
+						= f.file_field :image
+					.form-group
+						= f.submit 'Upload', class: 'btn btn-default'

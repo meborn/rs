@@ -19,7 +19,8 @@
 							-@products.each do |p|
 								%tr
 									%td.admin-product-image-td
-										= image_tag p.product_images[0].image, class: 'img-responsive admin-product-image'
+										-unless p.product_images.empty?
+											= image_tag p.product_images[0].image, class: 'img-responsive admin-product-image'
 									%td= p.title
 									%td= p.price
 									%td
